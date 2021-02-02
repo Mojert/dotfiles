@@ -1,0 +1,92 @@
+source $VIMRUNTIME/defaults.vim
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Tabs (a.k.a. spaces;))
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set smartindent
+
+" Misc
+set number
+set relativenumber
+set hlsearch
+set noswapfile
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set splitright
+let mapleader = " "
+
+" Plugins (managed by vim-plug")
+call plug#begin('~/.vim/plugged')
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-utils/vim-man'
+Plug 'lyuts/vim-rtags'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mbbill/undotree'
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'unblevable/quick-scope'
+" sneak
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'vhdirk/vim-cmake'
+call plug#end()
+" CoC Plugins
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-cmake']
+
+let g:rg_derive_root='true'
+
+let g:ctrlp_working_path_mode = 'ra'
+
+let g:undotree_SetFocusWhenToggle = 1
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+let g:cmake_export_compile_commands = 1
+let g:cmake_ycm_symlinks = 1
+
+" Mappings
+nnoremap é :nohls<CR>
+nnoremap <C-p> :CtrlP<CR>
+nnoremap , ;
+nnoremap ; ,
+
+nnoremap <Leader>h :wincmd h<CR>
+nnoremap <Leader>j :wincmd j<CR>
+nnoremap <Leader>k :wincmd k<CR>
+nnoremap <Leader>l :wincmd l<CR>
+nnoremap <Leader>H :wincmd H<CR>
+nnoremap <Leader>J :wincmd J<CR>
+nnoremap <Leader>K :wincmd K<CR>
+nnoremap <Leader>L :wincmd L<CR>
+" Splits (vertical and horizontal)
+nnoremap <Leader>v :wincmd v<CR>
+nnoremap <Leader>s :wincmd s<CR>
+nnoremap <silent> <Leader>+ :vertical resize +5<CR>
+nnoremap <silent> <Leader>. :vertical resize +5<CR>
+nnoremap <silent> <Leader>- :vertical resize -5<CR>
+
+nnoremap <Leader>u :UndotreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggleVCS<CR>
+nnoremap <Leader>rg :Rg<Space>
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+nohls
+

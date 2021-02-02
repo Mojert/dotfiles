@@ -1,2 +1,6 @@
 # dotfiles
-These are my personal dotfiles. I apply them to my home directory using GNU Stow. Maybe you'll find some interesting configs in there!
+These are my personal dotfiles. They are applied using the ```applyconfig.sh```
+script. **This script must be run from the working tree of this repo!!!**
+
+I hope you'll find something interesting!
+
