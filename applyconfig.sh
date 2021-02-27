@@ -13,7 +13,7 @@ function AnotinB {
     return 0
 }
 
-if [[ ! -e $HOME.config ]]; then
+if [[ ! -e $HOME/.config ]]; then
     mkdir $HOME/.config
 fi
 

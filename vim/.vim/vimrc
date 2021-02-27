@@ -36,7 +36,7 @@ Plug 'unblevable/quick-scope'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'vhdirk/vim-cmake'
+Plug 'cdelledonne/vim-cmake'
 call plug#end()
 " CoC Plugins
 let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-cmake']
