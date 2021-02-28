@@ -37,12 +37,9 @@ setopt correct
 setopt correctall
 
 # PROMPT='%(?..%F{red}%?%f )%F{blue}[%f%F{yellow}%n%f %F{green}%3~%f%F{blue}]%f%# '
-source $HOME/.config/git-prompt.sh
+source $XDG_CONFIG_HOME/zsh/git-prompt.sh
 GIT_PS1_SHOWCOLORHINTS=true
 precmd () { __git_ps1 "%(?..%F{red}%?%f )%F{blue}[%f%F{yellow}%n%f %F{green}%3~%f%F{blue}]%f" "%# " }
-
-# Environment Variables
-source $HOME/dev/Vulkan\ SDK/1.1.130.0/setup-env.sh
 
 # Aliasses
 alias ls='ls --color'
