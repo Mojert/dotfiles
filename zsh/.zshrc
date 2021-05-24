@@ -48,7 +48,9 @@ alias la='ls -a'
 alias lla='ls -la --human-readable'
 alias grep='grep --color=always'
 alias nb='newsboat'
+alias cu='checkupdates'
 alias v='vim'
+eval $(thefuck --alias)
 
 alias ga='git add'
 alias gco='git commit'
@@ -68,5 +70,5 @@ fi
 
 source $XDG_CONFIG_HOME/zsh/pipcompletion.sh
 
-PATH="${PATH}:${HOME}/.local/bin"
+PATH="${HOME}/.local/bin:${PATH}"
 
