@@ -1,0 +1,6 @@
+[submodule "openbox/.themes/Nord-Openbox"]
+	path = openbox/.themes/Nord-Openbox
+	url = https://github.com/the-zero885/Nord-Openbox-theme
+[submodule "openbox/.themes/Nord-GTK"]
+	path = GTK/.themes/Nord-GTK
+	url = https://github.com/EliverLara/Nordic

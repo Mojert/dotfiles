@@ -41,11 +41,18 @@ source $XDG_CONFIG_HOME/zsh/git-prompt.sh
 GIT_PS1_SHOWCOLORHINTS=true
 precmd () { __git_ps1 "%(?..%F{red}%?%f )%F{blue}[%f%F{yellow}%n%f %F{green}%3~%f%F{blue}]%f" "%# " }
 
+# Environment Variables
+export VISUAL="gvim"
+export EDITOR="vim"
+
 # Aliasses
-alias ls='ls --color'
-alias ll='ls -l --human-readable'
-alias la='ls -a'
-alias lla='ls -la --human-readable'
+alias ls='exa --color=always'
+alias ll='exa -l'
+alias lt='exa -T'
+alias la='exa -a'
+alias lla='exa -la'
+alias lta='exa -Ta'
+alias tree='exa -T'
 alias grep='grep --color=always'
 alias nb='newsboat'
 alias cu='checkupdates'

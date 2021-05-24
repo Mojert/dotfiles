@@ -19,10 +19,13 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set splitright
+set foldmethod=marker
+set termguicolors
 let mapleader = " "
 
 " Plugins (managed by vim-plug")
 call plug#begin('~/.vim/plugged')
+Plug 'arcticicestudio/nord-vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
@@ -38,6 +41,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cdelledonne/vim-cmake'
 call plug#end()
+colorscheme nord
+
 " CoC Plugins
 let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-cmake']
 
@@ -57,7 +62,12 @@ nnoremap é :nohls<CR>
 nnoremap <C-p> :CtrlP<CR>
 nnoremap , ;
 nnoremap ; ,
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>r :s/
+nnoremap <Leader>R :%s/
 
+" Window movements
 nnoremap <Leader>h :wincmd h<CR>
 nnoremap <Leader>j :wincmd j<CR>
 nnoremap <Leader>k :wincmd k<CR>
@@ -69,6 +79,7 @@ nnoremap <Leader>L :wincmd L<CR>
 " Splits (vertical and horizontal)
 nnoremap <Leader>v :wincmd v<CR>
 nnoremap <Leader>s :wincmd s<CR>
+" Window resizing
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>. :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>

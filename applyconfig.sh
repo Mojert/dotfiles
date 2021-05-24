@@ -17,6 +17,10 @@ if [[ ! -e $HOME/.config ]]; then
     mkdir $HOME/.config
 fi
 
+if [[ ! -e $HOME/.themes ]]; then
+    mkdir $HOME/.themes
+fi
+
 # Special instructions for vim
 if [[ ! -e $HOME/.vim/autoload/plug.vim ]]; then
     curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
